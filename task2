@@ -17,11 +17,10 @@ for (int i=0;i<str.Length;i++)
         strResult+=str[i];
     }
 }
+return strResult;
 }
 
 
 string symbols="aBcD1ef!-";
 Console.WriteLine(DoALlLettersSmall(symbols));
 
-//error CS0161: "DoALlLettersSmall(string)": не все пути к коду возвращают значение. [C:\Users\
-Asus\Desktop\dz_sem6_yp\task2\task2.csproj], why?
