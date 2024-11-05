@@ -1,0 +1,56 @@
+// Задайте двумерный массив символов
+//  (тип char[,]). 
+// Создать строку из символов этого массива. 
+
+char[,] CreateMatrixChar(int rows, int columns)
+{
+char[,] matrix = new char[rows, columns];
+for (int i = 0; i < rows; i++)   //rows=matrix.GetLength(0)
+{
+    for (int j = 0; j < columns; j++)   //columns=matrix.GetLength(1)
+{
+    Console.WriteLine("Vvedite new element of matrix");
+   matrix[i,j] = Console.ReadLine();
+}
+}
+return matrix;
+}
+
+CreateMatrixChar(3,6);
+
+
+void PrintMatrix(char[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+string CharMatrixToString(char[,] matrix)
+
+{
+string res = string.Empty; // ""
+
+for (int i=0; i < matrix.GetLength(0); i++)
+{
+    for(int j=0; j < matrix.GetLength(1); j++)
+res += matrix[i,j];
+}
+
+return res;
+}
+
+
+char[,] mtrx=new char[,] {{'h', 'e', 'l', 'l','o',},
+                             {'t', 'c', 'h', 'r','!',}};
+
+PrintMatrix(mtrx);
+ Console.WriteLine();
+
+Console.WriteLine($"Результат преобразования в строку: {CharMatrixToString(mtrx)}");
