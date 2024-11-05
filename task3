@@ -1,1 +1,37 @@
+// Задайте произвольную строку. Выясните,
+// является ли она палиндромом.
 
+
+void IsWordPolindrom(string word)
+{
+bool isItPolindrom=false;
+int count=0; //нужен для того, чтобы в случае совпадения последних проверяемых символов
+//проверить то что дo этого все проверяемые символы также совпадали, иначе возможна ошибка.
+//Hапример, если убрать int count, слово limit определится как полиндром.
+for (int i=0; i<=word.Length/2;i++)
+{
+     if (word[i] == word[word.Length - 1 - i])
+     {
+        isItPolindrom=true;
+    }
+    else
+    {
+         isItPolindrom=false;
+         count+=1;
+    }
+    
+}
+if(isItPolindrom==true && count==0)
+{
+   Console.WriteLine("Slovo yavlyaetsa polindromom"); 
+}
+else if (count>0)
+{
+     Console.WriteLine("Slovo ne yavlyaetsa polindromom");
+}
+}
+
+
+Console.WriteLine("Vvedi slovo:");
+string slovo=Convert.ToString(Console.ReadLine());
+IsWordPolindrom(slovo);
